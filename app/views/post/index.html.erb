@@ -1,0 +1,13 @@
+<h1>첫페이지당</h1>
+<% @posts.each do |x| %>
+제목: <%=x.title%> <br>
+내용: <%=x.content%> <br>
+
+<%=link_to '삭제', post_destroy_path(post_id: x.id)%>
+
+<%=link_to 'Edit', post_edit_path(x) %>
+
+--------------------- <br>
+<%end%>
+
+<%=link_to 'Write', post_new_path %>
